@@ -1,0 +1,475 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreWild | Adventure & Trekking</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7f2;
+            color: #26382b;
+        }
+
+        header {
+            background: #173d2a;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            color: #c5e86c;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c5e86c;
+        }
+
+        .hero {
+            height: 500px;
+            background:
+                linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.5)),
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #c5e86c;
+            color: #173d2a;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #a9d344;
+        }
+
+        section {
+            padding: 55px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #173d2a;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 35px;
+            color: #667568;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+            transition: transform .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #245438;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e4f3d3;
+            color: #245438;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 23px;
+            font-weight: bold;
+            color: #df782d;
+            margin: 15px 0;
+        }
+
+        .schedule {
+            background: #e4efdf;
+        }
+
+        .schedule-box {
+            background: white;
+            padding: 22px;
+            margin-bottom: 15px;
+            border-left: 5px solid #5d914c;
+            border-radius: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-box {
+            padding: 25px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            color: #245438;
+        }
+
+        .info-box ul {
+            padding-left: 20px;
+            line-height: 2;
+        }
+
+        .safety {
+            background: #fff1df;
+            border-left: 6px solid #e68b3c;
+        }
+
+        .offer {
+            text-align: center;
+            background: #245438;
+            color: white;
+            border-radius: 12px;
+            padding: 35px 20px;
+        }
+
+        .offer h2 {
+            color: #c5e86c;
+            margin-bottom: 15px;
+        }
+
+        .offer p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .contact {
+            background: #173d2a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #c5e86c;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 12px;
+        }
+
+        footer {
+            background: #102a1c;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            section {
+                padding: 40px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🌿 ExploreWild</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#treks">Treks</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#checklist">Checklist</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h2>Adventure Awaits!</h2>
+            <p>Discover mountains, explore forests, and create unforgettable memories.</p>
+            <a href="#treks" class="btn">Explore Treks</a>
+        </div>
+    </section>
+
+    <!-- Trekking Routes -->
+    <section id="treks">
+        <h2 class="section-title">Popular Trekking Routes</h2>
+        <p class="subtitle">Choose your next adventure and explore the beauty of nature.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                     alt="Mountain trekking">
+                <div class="card-content">
+                    <span class="tag">Easy</span>
+                    <h3>Green Valley Trek</h3>
+                    <p>Enjoy green landscapes, peaceful forests, and beautiful valley views.</p>
+                    <p>📍 Location: Western Ghats</p>
+                    <p>⏱ Duration: 1 Day</p>
+                    <div class="price">₹1,499</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+                     alt="Hikers walking on a mountain trail">
+                <div class="card-content">
+                    <span class="tag">Moderate</span>
+                    <h3>Mountain Explorer</h3>
+                    <p>Walk through mountain trails and enjoy breathtaking sunrise views.</p>
+                    <p>📍 Location: Himalayan Foothills</p>
+                    <p>⏱ Duration: 2 Days</p>
+                    <div class="price">₹3,499</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=800&q=80"
+                     alt="Snowy mountain adventure">
+                <div class="card-content">
+                    <span class="tag">Difficult</span>
+                    <h3>Summit Challenge</h3>
+                    <p>Challenge yourself with steep climbs and spectacular mountain scenery.</p>
+                    <p>📍 Location: High Mountain Region</p>
+                    <p>⏱ Duration: 4 Days</p>
+                    <div class="price">₹7,999</div>
+                    <a href="#contact" class="btn">Book Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Camping Trips -->
+    <section>
+        <h2 class="section-title">Camping Adventures</h2>
+        <p class="subtitle">Spend a night under the stars and reconnect with nature.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=800&q=80"
+                     alt="Tent camping in nature">
+                <div class="card-content">
+                    <h3>Forest Camping</h3>
+                    <p>Enjoy tent stays, campfire activities where permitted, and guided nature walks.</p>
+                    <p>⏱ Duration: 1 Night / 2 Days</p>
+                    <div class="price">₹2,499</div>
+                    <a href="#contact" class="btn">Book Camping</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80"
+                     alt="Tent beneath a mountain sky">
+                <div class="card-content">
+                    <h3>Mountain Camping</h3>
+                    <p>Experience mountain views, stargazing, and a peaceful outdoor stay.</p>
+                    <p>⏱ Duration: 2 Nights / 3 Days</p>
+                    <div class="price">₹4,499</div>
+                    <a href="#contact" class="btn">Book Camping</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="schedule" id="schedule">
+        <h2 class="section-title">Upcoming Trip Schedule</h2>
+        <p class="subtitle">Sample schedules — contact us to confirm actual trip dates.</p>
+
+        <div class="schedule-box">
+            <h3>🌄 Green Valley Trek</h3>
+            <p><strong>Day:</strong> Every Saturday (subject to availability)</p>
+            <p><strong>06:00 AM:</strong> Departure | <strong>08:00 AM:</strong> Trek begins</p>
+            <p><strong>01:00 PM:</strong> Lunch | <strong>04:00 PM:</strong> Return journey</p>
+        </div>
+
+        <div class="schedule-box">
+            <h3>🏕️ Forest Camping</h3>
+            <p><strong>Day:</strong> Selected weekends</p>
+            <p><strong>02:00 PM:</strong> Arrival | <strong>04:00 PM:</strong> Nature walk</p>
+            <p><strong>07:00 PM:</strong> Dinner | <strong>Next Day, 07:00 AM:</strong> Breakfast</p>
+        </div>
+
+        <div class="schedule-box">
+            <h3>⛰️ Summit Challenge</h3>
+            <p><strong>Duration:</strong> 4 Days</p>
+            <p><strong>Day 1:</strong> Arrival and preparation</p>
+            <p><strong>Days 2–3:</strong> Guided trek and overnight camp</p>
+            <p><strong>Day 4:</strong> Descent and return</p>
+        </div>
+    </section>
+
+    <!-- Equipment Checklist and Safety -->
+    <section id="checklist">
+        <h2 class="section-title">Prepare for Your Adventure</h2>
+        <p class="subtitle">Pack smart and follow safety guidelines before every trip.</p>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <h3>🎒 Equipment Checklist</h3>
+                <ul>
+                    <li>Comfortable trekking shoes</li>
+                    <li>Backpack and water bottle</li>
+                    <li>First-aid kit and personal medicines</li>
+                    <li>Weather-appropriate clothing</li>
+                    <li>Raincoat or waterproof jacket</li>
+                    <li>Flashlight and extra batteries</li>
+                    <li>Energy snacks and packed food</li>
+                    <li>Map, compass, or charged GPS device</li>
+                    <li>Sleeping bag for camping trips</li>
+                    <li>Sun protection and insect repellent</li>
+                </ul>
+            </div>
+
+            <div class="info-box safety">
+                <h3>⚠️ Safety Guidelines</h3>
+                <ul>
+                    <li>Follow your trek leader's instructions.</li>
+                    <li>Stay with your trekking group.</li>
+                    <li>Check weather conditions before departure.</li>
+                    <li>Carry enough drinking water.</li>
+                    <li>Do not litter or disturb wildlife.</li>
+                    <li>Avoid unsafe shortcuts and restricted areas.</li>
+                    <li>Inform the guide about medical conditions.</li>
+                    <li>Carry emergency contact information.</li>
+                    <li>Turn back if conditions become unsafe.</li>
+                    <li>Choose a route suited to your fitness level.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Offers -->
+    <section>
+        <div class="offer">
+            <h2>🌲 Special Adventure Offer!</h2>
+            <p>Plan a group adventure and enjoy a sample 10% discount
+               for groups of five or more.</p>
+            <p><strong>Explore More. Worry Less. Live Wild!</strong></p>
+            <a href="#contact" class="btn">Enquire Now</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Contact ExploreWild</h2>
+        <p>📍 Address: Adventure Street, Hyderabad, India</p>
+        <p>📞 Phone: +91 98765 43210</p>
+        <p>✉️ Email: explorewild@example.com</p>
+        <p>🌐 Website: www.explorewild.com</p>
+        <br>
+        <a href="mailto:explorewild@example.com" class="btn">Send an Email</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ExploreWild Adventures | Explore Nature Responsibly 🌿</p>
+    </footer>
+
+</body>
+</html>
+```
