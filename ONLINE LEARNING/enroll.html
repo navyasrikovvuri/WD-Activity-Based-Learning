@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - LearnHub</title>
+    <link rel="stylesheet" href="ostyle.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">LearnHub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="instructors.html">Instructors</a>
+        <a href="progress.html">My Learning</a>
+    </nav>
+</header>
+
+<main class="page">
+    <h1>Enroll in a Course</h1>
+    <p>Fill in your details to register for a learning course.</p>
+
+<form action="progress.html" method="get">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name"
+           placeholder="Enter your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email"
+           placeholder="Enter your email" required>
+
+    <label for="course">Select Course</label>
+    <select id="course" name="course" required>
+        <option value="">Choose a course</option>
+        <option value="web-development">Full Stack Web Development</option>
+        <option value="python">Python Programming</option>
+        <option value="data-analytics">Data Analytics</option>
+    </select>
+
+    <button type="submit" class="btn">Submit Enrollment</button>
+</form>
+
+<p><a href="courses.html" class="btn secondary">Back to Courses</a></p>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 LearnHub</p>
+</footer>
+
+</body>
+</html>
